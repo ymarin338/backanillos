@@ -6,9 +6,9 @@ function Conexion(){
     this.inicia = function(){
     this.pool = mysql.createPool({
         connectionLimit: 100,
-        host:'anillosdetradicionnaval.com',
-        user:'anillosd',
-        password:'3u4f8m9gWC',
+        host:'database-2.chyxut0hvq98.us-east-2.rds.amazonaws.com',
+        user:'admin',
+        password:'Colombia2019',
         database:'anillosd_buena'
     })
 }
