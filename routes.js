@@ -50,7 +50,7 @@ function http(){
         app.get('/productos', function(solicitud, respuesta){
             db.seleccionarProducto(respuesta);
         })
-        app.get('/productos', function(solicitud, respuesta){
+        app.get('/testi', function(solicitud, respuesta){
             db.seleccionarTestimonios(respuesta);
         })
 
