@@ -14,7 +14,7 @@ function http(){
           }
         })
         app.get('/testimonios', function(solicitud, respuesta){
-            db.seleccionarTestimo(solicitud.body, respuesta);
+            db.seleccionarTestimo(respuesta);
         })
         app.get('/categorias/:id/', function(solicitud, respuesta){
             db.seleccionarId(solicitud.params.id, respuesta);
