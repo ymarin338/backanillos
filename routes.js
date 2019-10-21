@@ -49,7 +49,7 @@ function http(){
         app.delete('/subcategorias/:id/', function(solicitud, respuesta){
             db.borrarSubCate(solicitud.params.id, respuesta);
         })
-        app.get('/productos', function(solicitud, respuesta){
+        app.get('/productos1', function(solicitud, respuesta){
             db.seleccionarTestimonios(respuesta);
         })
 
