@@ -157,7 +157,18 @@ function MetodoDB(){
                 })
             })
            }
-           
+           this.seleccionarSlides = function(respuesta){
+            conexion.obtener(function (er, cn){
+                cn.query('select * from slides', function(error, resultado){
+                if(error){
+                    respuesta.send({estado:'Error'})
+                } else{
+                    respuesta.send(resultado);
+                }
+       
+            })
+        })
+       }
                this.seleccionarProductoId = function(id, respuesta){
                    conexion.obtener(function(er, cn){
                        cn.query('select * from productos where id=?', id, function(error, resultado){
