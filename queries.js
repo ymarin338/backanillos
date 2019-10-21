@@ -68,6 +68,19 @@ function MetodoDB(){
                 })
             })
         }
+        this.seleccionarTestimonios = function(respuesta){
+            conexion.obtener(function (er, cn){
+                cn.query('select * from testimonios', function(error, resultado){
+                
+                if(error){
+                    respuesta.send({estado:'Error'})
+                } else{
+                    respuesta.send(resultado);
+                }
+       
+            })
+        })
+       }
         this.seleccionarSubCate = function(respuesta){
             conexion.obtener(function (er, cn){
                 cn.query('select * from subcategorias', function(error, resultado){
@@ -81,21 +94,7 @@ function MetodoDB(){
             })
         })
        }
-       this.seleccionarTestimo = function(respuesta){
-        conexion.obtener(function (er, cn){
-            cn.query('select * from testimonios', function(error, resultado){
-            
-            if(error){
-                respuesta.send({estado:'Error'})
-            } else{
-                respuesta.send(resultado);
-            }
-   
-        })
-    })
-   }
-       
-           this.seleccionarSubCateId = function(id, respuesta){
+        this.seleccionarSubCateId = function(id, respuesta){
                conexion.obtener(function(er, cn){
                    cn.query('select * from subcategorias where id=?', id, function(error, resultado){
                        

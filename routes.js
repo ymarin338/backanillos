@@ -13,10 +13,6 @@ function http(){
               respuesta.json({error:true, message:error.message})
           }
         })
-        app.get('/testimonios', function(solicitud, respuesta){
-            db.seleccionarTestimo(respuesta);
-        })
-        
         app.get('/categorias/:id/', function(solicitud, respuesta){
             db.seleccionarId(solicitud.params.id, respuesta);
         })
@@ -35,7 +31,10 @@ function http(){
         app.get('/subcategorias', function(solicitud, respuesta){
             db.seleccionarSubCate(respuesta);
         })
-
+        app.get('/testimonios', function(solicitud, respuesta){
+            db.seleccionarTestimonios(respuesta);
+        })
+        
         app.get('/subcategorias/:id/', function(solicitud, respuesta){
             db.seleccionarSubCateId(solicitud.params.id, respuesta);
         })
