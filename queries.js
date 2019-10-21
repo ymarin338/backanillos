@@ -81,6 +81,19 @@ function MetodoDB(){
             })
         })
        }
+       this.seleccionarTestimo = function(respuesta){
+        conexion.obtener(function (er, cn){
+            cn.query('select * from testimonios', function(error, resultado){
+            
+            if(error){
+                respuesta.send({estado:'Error'})
+            } else{
+                respuesta.send(resultado);
+            }
+   
+        })
+    })
+   }
        
            this.seleccionarSubCateId = function(id, respuesta){
                conexion.obtener(function(er, cn){

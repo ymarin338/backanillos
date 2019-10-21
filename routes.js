@@ -13,7 +13,9 @@ function http(){
               respuesta.json({error:true, message:error.message})
           }
         })
-
+        app.get('/testimonios', function(solicitud, respuesta){
+            db.seleccionarTestimo(solicitud.body, respuesta);
+        })
         app.get('/categorias/:id/', function(solicitud, respuesta){
             db.seleccionarId(solicitud.params.id, respuesta);
         })
