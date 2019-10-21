@@ -70,7 +70,7 @@ function MetodoDB(){
         }
         this.seleccionarTestimonios = function(respuesta){
             conexion.obtener(function (er, cn){
-                cn.query('select t.nombre, t.red, t.comentario from testimonios t', function(error, resultado){
+                cn.query('select * from testimonios', function(error, resultado){
                 
                 if(error){
                     respuesta.send({estado:'Error'})
