@@ -53,6 +53,9 @@ function http(){
         app.get('/testi', function(solicitud, respuesta){
             db.seleccionarTestimonios(respuesta);
         })
+        app.get('/slides', function(solicitud, respuesta){
+            db.seleccionarSlides(respuesta);
+        })
 
         app.get('/productos/:id/', function(solicitud, respuesta){
             db.seleccionarProductoId(solicitud.params.id, respuesta);

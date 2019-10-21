@@ -80,6 +80,18 @@ function MetodoDB(){
        
             })
         })
+        this.seleccionarSlides = function(respuesta){
+            conexion.obtener(function (er, cn){
+                cn.query('select * from slides', function(error, resultado){
+                
+                if(error){
+                    respuesta.send({estado:'Error'})
+                } else{
+                    respuesta.send(resultado);
+                }
+       
+            })
+        })
        }
         this.seleccionarSubCate = function(respuesta){
             conexion.obtener(function (er, cn){
