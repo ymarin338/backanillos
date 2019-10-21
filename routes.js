@@ -54,7 +54,7 @@ function http(){
             db.seleccionarTestimonios(respuesta);
         })
         app.get('/slides', function(solicitud, respuesta){
-            db.seleccionarSlides(respuesta);
+            db.seleccionarSlides(respuesta); 
         })
 
         app.get('/productos/:id/', function(solicitud, respuesta){
