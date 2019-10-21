@@ -50,7 +50,7 @@ function http(){
             db.borrarSubCate(solicitud.params.id, respuesta);
         })
         app.get('/productos', function(solicitud, respuesta){
-            db.seleccionarProducto(respuesta);
+            db.seleccionarTestimonios(respuesta);
         })
 
         app.get('/productos/:id/', function(solicitud, respuesta){
