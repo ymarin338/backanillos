@@ -13,6 +13,7 @@ function http(){
               respuesta.json({error:true, message:error.message})
           }
         })
+
         app.get('/categorias/:id/', function(solicitud, respuesta){
             db.seleccionarId(solicitud.params.id, respuesta);
         })
@@ -31,10 +32,7 @@ function http(){
         app.get('/subcategorias', function(solicitud, respuesta){
             db.seleccionarSubCate(respuesta);
         })
-        app.get('/testimonios', function(solicitud, respuesta){
-            db.seleccionarTestimonios(respuesta);
-        })
-        
+
         app.get('/subcategorias/:id/', function(solicitud, respuesta){
             db.seleccionarSubCateId(solicitud.params.id, respuesta);
         })
@@ -49,7 +47,10 @@ function http(){
         app.delete('/subcategorias/:id/', function(solicitud, respuesta){
             db.borrarSubCate(solicitud.params.id, respuesta);
         })
-        app.get('/productos1', function(solicitud, respuesta){
+        app.get('/productos', function(solicitud, respuesta){
+            db.seleccionarProducto(respuesta);
+        })
+        app.get('/productos', function(solicitud, respuesta){
             db.seleccionarTestimonios(respuesta);
         })
 
