@@ -70,19 +70,7 @@ function MetodoDB(){
         }
         this.seleccionarTestimonios = function(respuesta){
             conexion.obtener(function (er, cn){
-                cn.query('select * from testimonios', function(error, resultado){
-                
-                if(error){
-                    respuesta.send({estado:'Error'})
-                } else{
-                    respuesta.send(resultado);
-                }
-       
-            })
-        })
-        this.seleccionarSlides = function(respuesta){
-            conexion.obtener(function (er, cn){
-                cn.query('select * from slides', function(error, resultado){
+                cn.query('select * from testimonios t', function(error, resultado){
                 
                 if(error){
                     respuesta.send({estado:'Error'})
